@@ -65,6 +65,10 @@ main {
     position: relative;
 }
 
+body {
+    min-height: 100vh;
+}
+
 .pulse {
     animation: pulse 1.5s ease-in-out .5s infinite
 }

@@ -1,37 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import MarvelService from '../../services/MarvelService';
+import React, { useEffect, useState, useCallback } from 'react';
+import useMarvelService from '../../services/MarvelService';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Spiner from '../Spiner/Spiner';
+
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
 const RandomChar = () => {
     const [char, setChar] = useState({});
-    const [loading, setLoading] = useState(true);
+    const {loading, error, getCharacter} = useMarvelService();
 
-    const marvelService = new MarvelService();
-
-    const updateChar = () => {
-        setLoading(true);
-
+    const updateChar = useCallback(() => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
 
-        marvelService
-        .getCharacter(id) 
-        .then((res) => {
+        getCharacter(id).then((res) => {
             setChar(res);
-            setLoading(false);
-        }).catch ( () => {
-            updateChar();
         });
-    }
+    }, [])
 
     useEffect(() => {
         updateChar();
-    }, []);
+    }, [updateChar]);
+
+    const errorMessage = error ? <ErrorMessage/> : null;
+    const spinner = loading ? <Spiner/> : null;
+    const content = !(loading || error) ? <View char={char}/> : null;
 
     return (
         <div className="randomchar">
-            {loading?<Spiner/>:<View char={char}/>}
+            {errorMessage}
+            {spinner}
+            {content}
             <div className="randomchar__static">
                 <p className="randomchar__title">
                     Random character for today!<br/>
@@ -49,12 +48,12 @@ const RandomChar = () => {
     )
 }
 
-const View = ({char, onCharSelected}) => {
-    const {id, name, description, thumbnail, homepage, wiki} = char;
+const View = ({char}) => {
+    const {name, description, thumbnail, homepage, wiki} = char;
 
     let imgStyle = {'objectFit' : 'cover'};
 
-    if (thumbnail.includes("image_not_available")) {
+    if (thumbnail && thumbnail.includes("image_not_available")) {
         imgStyle = {'objectFit' : 'unset'};
     }
     

@@ -1,22 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Spiner from '../Spiner/Spiner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Skeleton from '../Skeleton/Skeleton';
-import MarvelService from '../../services/MarvelService';
+import useMarvelService from '../../services/MarvelService';
 import './charInfo.scss';
 
 const CharInfo = ({charId}) => {
     const [char, setChar] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
     const charInfoBlock = useRef(null);
-
-
-    const marvelService = new MarvelService();
+    const {loading, error, getCharacter} = useMarvelService();
 
     useEffect(() => {
-        updateChar();
-
         const charInfoTop = charInfoBlock.current.getBoundingClientRect().top;
 
         function onScrollFixed () {
@@ -26,6 +21,8 @@ const CharInfo = ({charId}) => {
                 charInfoBlock.current.style = 'top: 0';
             }
         }
+
+        updateChar();
 
         window.addEventListener("scroll", onScrollFixed);
 
@@ -43,16 +40,9 @@ const CharInfo = ({charId}) => {
     const updateChar = () => {
         if(!charId) return;
 
-        setLoading(true);
-
-        marvelService
-        .getCharacter(charId)
+        getCharacter(charId)
         .then((res) => {
             setChar(res);
-            setLoading(false);
-        }).catch ( () => {
-            setLoading(false);
-            setError(true);
         });
     }
 
@@ -108,9 +98,13 @@ const View = ({char}) => {
                     comics.map((item, i) => {
                         if(i > 9) return false;
 
+                        const idComicURL = item.resourceURI.split("/");
+                        const idComic = idComicURL[idComicURL.length - 1];
+                        console.log(idComic)
+
                         return (
                             <li key={i} className="char__comics-item">
-                                {item.name}
+                                <Link to={`/comics/${idComic}`}>{item.name}</Link>
                             </li>
                         )
                     })
