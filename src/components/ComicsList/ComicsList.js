@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Spiner from '../Spiner/Spiner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';

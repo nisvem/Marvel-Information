@@ -5,7 +5,6 @@ import AppHeader from "../AppHeader/AppHeader";
 import {MainPage, ComicsPage, Page404, SingleComicPage} from "../Pages";
 
 const App = () => {
-    console.log(process.env);
     return (
         <Router>
             <div className="app">

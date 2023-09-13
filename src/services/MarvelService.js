@@ -3,8 +3,6 @@ import { useHttp } from "../hooks/http.hook";
 const useMarvelService = () => {
   const {loading, request, error} = useHttp();
 
-  console.log(process.env);
-
   const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
   const _apiKey = `apikey=${process.env.REACT_APP_TOKEN_MARVEL}`;
   const _baseLimit = 9;
@@ -36,7 +34,6 @@ const useMarvelService = () => {
   }
 
   const _transformCharacter = (char) => {
-    console.log(char.comics);
     return {
       id: char.id,
       name: char.name,

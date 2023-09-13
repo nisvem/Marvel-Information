@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Spiner from '../Spiner/Spiner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
 import './charList.scss';
-// import abyss from '../../resources/img/abyss.jpg';
 
 const CharList = ({onCharSelected}) => {
     const [charList, setCharList] = useState([]);
@@ -96,8 +95,5 @@ const CharList = ({onCharSelected}) => {
         </div>
     )
 }
-
-
-
 
 export default CharList;
