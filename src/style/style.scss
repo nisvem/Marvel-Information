@@ -73,6 +73,10 @@ body {
     animation: pulse 1.5s ease-in-out .5s infinite
 }
 
+aside {
+    position: relative;
+}
+
 @keyframes pulse {
     0% {
         opacity: 1

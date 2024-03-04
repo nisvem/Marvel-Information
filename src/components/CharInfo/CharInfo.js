@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Spiner from '../Spiner/Spiner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
@@ -8,29 +8,7 @@ import './charInfo.scss';
 
 const CharInfo = ({charId}) => {
     const [char, setChar] = useState(null);
-    const charInfoBlock = useRef(null);
     const {loading, error, getCharacter} = useMarvelService();
-
-    useEffect(() => {
-        const charInfoTop = charInfoBlock.current.getBoundingClientRect().top;
-
-        function onScrollFixed () {
-            if ((charInfoTop - 25) < window.scrollY) {
-                charInfoBlock.current.style = `top: ${window.scrollY - charInfoTop + 25}px`;
-            } else {
-                charInfoBlock.current.style = 'top: 0';
-            }
-        }
-
-        updateChar();
-
-        window.addEventListener("scroll", onScrollFixed);
-
-        return () => {
-            window.removeEventListener('scroll', onScrollFixed);
-        }
-    }, []);
-
 
     useEffect(() => {
         updateChar();
@@ -52,7 +30,7 @@ const CharInfo = ({charId}) => {
     const content = !(loading || error || !char) ? <View char={char} /> : null;
 
     return (
-        <div className="char__info" ref={charInfoBlock}>
+        <div className="char__info">
             {skeleton}
             {errorMessage}
             {spinner}
@@ -100,7 +78,6 @@ const View = ({char}) => {
 
                         const idComicURL = item.resourceURI.split("/");
                         const idComic = idComicURL[idComicURL.length - 1];
-                        console.log(idComic)
 
                         return (
                             <li key={i} className="char__comics-item">
