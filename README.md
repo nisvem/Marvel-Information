@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# Marvel Information
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Marvel Information is a web application built with JavaScript, SCSS, and HTML that provides information about Marvel characters, comics, and related content. Designed with a dynamic and user-friendly interface, it serves as a comprehensive resource for Marvel enthusiasts.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **Character Search**:
+   - Search for detailed information on Marvel characters.
+   - View character profiles, including their history and appearances.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Comics Overview**:
+   - Explore a collection of Marvel comics.
+   - View details such as publication date, series, and creators.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Dynamic Content**:
+   - Uses JavaScript to fetch and display data dynamically.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## File Structure
 
-### `npm run build`
+The project is organized as follows:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **src**:
+  - Contains the main source code, including scripts and styles.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **assets**:
+  - Static assets such as images and icons used in the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **styles**:
+  - SCSS files for styling the application.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation and Development
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Follow these steps to set up the project for making changes and running it locally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/nisvem/Marvel-Information.git
+   cd Marvel-Information
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install dependencies**:
+   - Ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+   - Run the following command to install necessary dependencies:
+     ```bash
+     npm install
+     ```
 
-## Learn More
+3. **Start the development server**:
+   - Run the following command to start the project in development mode with live reloading:
+     ```bash
+     npm start
+     ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Open the application in your browser**:
+   - The application will be accessible at:
+     ```
+     http://localhost:3000
+     ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Making changes**:
+   - Modify the files in the `src` or `styles` directory as needed.
+   - The development server will automatically reload the application to reflect your changes.
 
-### Code Splitting
+6. **Build for production**:
+   - When your changes are complete and ready for deployment, build the project using:
+     ```bash
+     npm run build
+     ```
+   - The optimized files will be available in the `dist` folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Russian Version
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Marvel Information
 
-### Making a Progressive Web App
+Marvel Information — это веб-приложение, созданное с использованием JavaScript, SCSS и HTML, которое предоставляет информацию о персонажах, комиксах и другом контенте Marvel. Разработанное с динамичным и удобным интерфейсом, оно служит отличным ресурсом для поклонников Marvel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Возможности
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **Поиск персонажей**:
+   - Поиск подробной информации о персонажах Marvel.
+   - Просмотр профилей персонажей, включая их историю и появления.
 
-### Deployment
+2. **Обзор комиксов**:
+   - Исследование коллекции комиксов Marvel.
+   - Просмотр информации, такой как дата публикации, серия и создатели.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. **Динамический контент**:
+   - Использует JavaScript для динамического извлечения и отображения данных.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Структура файлов
+
+Проект организован следующим образом:
+
+- **src**:
+  - Содержит основной исходный код, включая скрипты и стили.
+
+- **assets**:
+  - Статические ресурсы, такие как изображения и иконки, используемые в приложении.
+
+- **styles**:
+  - Файлы SCSS для стилизации приложения.
+
+---
+
+## Установка и разработка
+
+Следуйте этим шагам, чтобы установить проект и внести изменения:
+
+1. **Клонируйте репозиторий**:
+   ```bash
+   git clone https://github.com/nisvem/Marvel-Information.git
+   cd Marvel-Information
+   ```
+
+2. **Установите зависимости**:
+   - Убедитесь, что у вас установлены [Node.js](https://nodejs.org/) и [npm](https://www.npmjs.com/).
+   - Выполните следующую команду для установки необходимых зависимостей:
+     ```bash
+     npm install
+     ```
+
+3. **Запустите сервер разработки**:
+   - Выполните следующую команду для запуска проекта в режиме разработки с автоматической перезагрузкой:
+     ```bash
+     npm start
+     ```
+
+4. **Откройте приложение в браузере**:
+   - Приложение будет доступно по адресу:
+     ```
+     http://localhost:3000
+     ```
+
+5. **Внесение изменений**:
+   - Измените файлы в директориях `src` или `styles` по мере необходимости.
+   - Сервер разработки автоматически перезагрузит приложение, чтобы отразить ваши изменения.
+
+6. **Создание сборки для продакшена**:
+   - Когда изменения завершены и готовы к публикации, выполните сборку проекта:
+     ```bash
+     npm run build
+     ```
+   - Оптимизированные файлы будут доступны в папке `dist`.
